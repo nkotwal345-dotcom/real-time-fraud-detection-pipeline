@@ -1,0 +1,6 @@
+metric,value
+Total Transactions Scored,284807
+Alert Threshold Percentile,99th percentile
+Generated Alerts,2849
+Fraud Cases Inside Alerts,283
+Alert Fraud Capture Rate Percentage,57.52

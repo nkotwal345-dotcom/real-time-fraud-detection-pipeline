@@ -80,3 +80,10 @@ This project demonstrates how fraud analytics can support risk teams by identify
 - Add model drift monitoring
 - Build final Power BI or Tableau dashboard
 - Simulate streaming fraud alerts using scheduled batch scoring
+
+## Near-Real-Time Alert Simulation
+This project includes a simulated fraud alerting workflow that scores transactions using anomaly-based risk indicators and generates dashboard-ready fraud alerts.
+
+Generated alert outputs:
+- reports/fraud_alerts_sample.csv
+- reports/alert_summary.csv
