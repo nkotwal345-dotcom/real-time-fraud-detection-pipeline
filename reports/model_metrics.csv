@@ -1,0 +1,5 @@
+metric,value
+Precision,0.0625
+Recall,0.8862
+F1 Score,0.1168
+ROC AUC,0.9726

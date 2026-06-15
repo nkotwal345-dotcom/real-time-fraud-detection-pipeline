@@ -1,0 +1,7 @@
+metric,value
+Total Transactions,284807.0
+Fraud Transactions,492.0
+Fraud Rate Percentage,0.1727
+Total Fraud Amount,60127.97
+Average Fraud Amount,122.21
+Average Non-Fraud Amount,88.29

@@ -14,10 +14,14 @@ IMAGES_DIR.mkdir(exist_ok=True)
 
 df = pd.read_csv(DATA_PATH)
 df.columns = [c.lower() for c in df.columns]
+for col in df.columns:
+    df[col] = pd.to_numeric(df[col].astype(str).str.replace(chr(39), '', regex=False).str.replace(chr(34), '', regex=False).str.strip(), errors='coerce')
+df = df.dropna().reset_index(drop=True)
+df['class'] = df['class'].astype(int)
 
 total_transactions = len(df)
-fraud_transactions = int(df['class'].sum())
-fraud_rate = round(df['class'].mean() * 100, 4)
+fraud_transactions = int((df['class'] == 1).sum())
+fraud_rate = round((df['class'] == 1).mean() * 100, 4)
 total_fraud_amount = round(df.loc[df['class'] == 1, 'amount'].sum(), 2)
 avg_fraud_amount = round(df.loc[df['class'] == 1, 'amount'].mean(), 2)
 avg_nonfraud_amount = round(df.loc[df['class'] == 0, 'amount'].mean(), 2)
@@ -109,3 +113,4 @@ Path('reports/fraud_analysis_report.md').write_text('\n'.join(summary_lines), en
 print('Fraud analysis completed successfully.')
 print(kpis)
 print(metrics)
+
